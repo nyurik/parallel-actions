@@ -13,16 +13,22 @@ const { Pool } = require('pg');
 const pexec = require('parallel-actions');
 
 async function run() {
-  // Use PostgreSQL pool to run queries and restrict the number of simultaneous connections.
-  const pgpool = new Pool({host: '...', port: '...', database: '...', max: 5});
+  // Use PostgreSQL pool to run queries and restrict
+  // the number of simultaneous connections.
+  const pgpool = new Pool({
+    max: 5,
+    host: '...', port: '...', database: '...',
+  });
 
-  // Which views we need to refresh, and what are their dependencies.
+  // Which views we need to refresh
   const views = {
     v1: {view: 'view1'},
     v2: {view: 'view2'},
     v3: {view: 'view3', dependsOn: ['v1', 'v2']},
   };
  
-  await pexec(views, (v) => pgpool.query(`REFRESH MATERIALIZED VIEW ${v.view};`));
+  await pexec(views,
+    v => pgpool.query(`REFRESH MATERIALIZED VIEW ${v.view};`)
+  );
 }
 ```
