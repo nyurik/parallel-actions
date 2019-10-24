@@ -1,0 +1,33 @@
+{
+  "name": "parallel-actions",
+  "version": "0.0.1",
+  "description": "This library simplifies running actions with dependencies in parallel, ensuring their dependencies finish first.",
+  "keywords": [
+    "actions",
+    "promises",
+    "async",
+    "graph",
+    "execution",
+    "ordering",
+    "parallel"
+  ],
+  "main": "lib/lib.js",
+  "scripts": {
+    "test": "mocha",
+    "preversion": "npm test"
+  },
+  "repository": "nyurik/parallel-actions",
+  "author": "Yuri Astrakhan <YuriAstrakhan@gmail.com>",
+  "license": "MIT",
+  "bugs": "https://github.com/nyurik/parallel-actions/issues",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-kartotherian": "^0.0.5"
+  }
+}
