@@ -1,6 +1,6 @@
 {
   "name": "parallel-actions",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This library simplifies running actions with dependencies in parallel, ensuring their dependencies finish first.",
   "keywords": [
     "actions",
@@ -23,13 +23,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^7.26.0",
-    "eslint-plugin-import": "^2.22.1",
-    "mocha": "^8.4.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-kartotherian": "^0.0.5"
+    "eslint-config-kartotherian": "^0.0.5",
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.4.0"
   }
 }
