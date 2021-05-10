@@ -4,7 +4,6 @@ const assert = require('assert');
 const runner = require('../lib/lib');
 
 describe('Parallel Actions Tests', () => {
-
   it('executes things in the right order', async () => {
     function executor(action, id, dependencies) {
       assert.strictEqual(id, action.id);
@@ -13,7 +12,8 @@ describe('Parallel Actions Tests', () => {
     }
 
     function test(actions) {
-      Object.entries(actions).map(([id, action]) => {
+      Object.entries(actions).forEach(([id, action]) => {
+        // eslint-disable-next-line no-param-reassign
         action.id = id;
       });
       return runner(actions, executor);
